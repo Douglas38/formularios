@@ -21,14 +21,22 @@ export class EscolasComponent implements OnInit{
   }
 
   selectedEscola?: ESCOLA;
+
   onselect(escola: ESCOLA): void {
 
     this.selectedEscola = escola
   };
 
+
+
   constructor(){}
 
 
   ngOnInit(): void {}
+
+  adicionaEscola(){
+    console.log("oi");
+  }
+
 
 }

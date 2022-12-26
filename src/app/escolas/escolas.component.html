@@ -1,0 +1,30 @@
+
+
+
+<h2>controle de EScolas</h2>
+
+<ul>
+    <li *ngFor="let escola of ESCOLA">
+      <button type="button" (click)="onselect(escola)">
+
+        <span class="badge">{{escola.id}}</span>
+        <span class="name">{{escola.name}}</span>
+       
+      </button>
+    </li>
+</ul>
+
+<div *ngIf="selectedEscola">
+<h2>{{selectedEscola.name | uppercase}} detalhes</h2>
+<div><span>id: </span> {{selectedEscola.id}} 
+    <button type="button">id</button>
+
+</div>
+
+<div>
+    <label for="name"> nome da Escola:</label>
+    <input id="name" [(ngModel)]="selectedEscola.name" placeholder="name">
+ 
+</div>
+</div>
+

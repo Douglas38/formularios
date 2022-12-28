@@ -24,7 +24,8 @@ export class EscolasComponent implements OnInit{
   adicionaEscola(): void{
                             
     console.log(this.escola)
-    this.escolas.push({id:1, name: this.escola})
+    this.escolas.push({id:this.escolas.length + 1, name: this.escola})
+    console.log(this.escolas.length)
   }
 
   estouPegando(): void{

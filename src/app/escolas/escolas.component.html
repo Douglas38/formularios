@@ -20,18 +20,19 @@
     <button type="button">id</button>
 
 </div>
-
-<div>
-    <label for="name"> nome da Escola:</label>
-    <input id="name" [(ngModel)]="selectedEscola.name" placeholder="name">
- 
-</div>
+    
 </div>
 
 <div>
-  <input id="name" placeholder="name">
-  <button type="button" (click)="adicionaEscola()">add</button>
+  <label for="nova-escola">nome da Escola:</label>
 
+  <input id="nova-escola"  [(ngModel)]="escola" placeholder="name"/>
+
+  <button type="button"  class="add-button"  (click)="adicionaEscola()">adicionar escola
+
+  </button>
+
+  <button type="button" class="add-button" (click)="estoupegando()"> estou pegando</button>
    
 
 </div>

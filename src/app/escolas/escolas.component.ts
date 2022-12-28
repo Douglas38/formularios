@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ESCOLA } from '../escola';
 import { ESCOLAS } from '../mock.escolas';
 
@@ -9,34 +10,48 @@ import { ESCOLAS } from '../mock.escolas';
   styleUrls: ['./escolas.component.css']
 })
 export class EscolasComponent implements OnInit{
- 
+
+  escola: any;
+
+
+
 
   ESCOLA = ESCOLAS;
   
 
-  escola: ESCOLA ={
-    id: 1,
-    name: 'ciep',
-    
-  }
 
   selectedEscola?: ESCOLA;
 
   onselect(escola: ESCOLA): void {
-
-    this.selectedEscola = escola
+ 
+ 
   };
 
 
 
-  constructor(){}
+  constructor(){
+
+  
+
+  }
 
 
   ngOnInit(): void {}
 
-  adicionaEscola(){
-    console.log("oi");
+  
+  adicionaEscola(): void{
+                                                                                                                                                                        
+  console.log(this.escola)
+    
   }
 
 
+  estoupegando(): void{
+
+    console.log('acho que eu entendi')
+
+    
+  }
+
+  
 }

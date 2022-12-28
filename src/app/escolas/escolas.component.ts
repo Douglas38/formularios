@@ -13,13 +13,16 @@ export class EscolasComponent implements OnInit{
 
   escola: any;
   escolas = ESCOLAS;
-  selectedEscola?: ESCOLA; 
+  selectedescola?: ESCOLA; 
 
   constructor(){ }
 
   ngOnInit(): void {}
     
-  onselect(escola: ESCOLA): void {};
+  onselect(escola: ESCOLA): void {
+
+    console.log()
+  };
 
   adicionaEscola(): void{
                             
@@ -34,4 +37,18 @@ export class EscolasComponent implements OnInit{
 
   }
 
+  deletar(escola:ESCOLA): void{
+    
+    const index = this.escolas.indexOf(escola);
+    this.escolas.splice(index, 1)
+    
+    console.log(index)
+    console.log('oi')
+    
+
+  }
+
+  editar(): void{
+
+  }
 }

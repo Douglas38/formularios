@@ -12,46 +12,25 @@ import { ESCOLAS } from '../mock.escolas';
 export class EscolasComponent implements OnInit{
 
   escola: any;
-
-
-
-
   ESCOLA = ESCOLAS;
-  
+  selectedEscola?: ESCOLA; 
 
-
-  selectedEscola?: ESCOLA;
-
-  onselect(escola: ESCOLA): void {
- 
- 
-  };
-
-
-
-  constructor(){
-
-  
-
-  }
-
+  constructor(){ }
 
   ngOnInit(): void {}
+    
+  onselect(escola: ESCOLA): void {};
 
-  
   adicionaEscola(): void{
                                                                                                                                                                         
-  console.log(this.escola)
+    console.log(this.escola)
     
   }
 
-
-  estoupegando(): void{
+  estouPegando(): void{
 
     console.log('acho que eu entendi')
 
-    
   }
 
-  
 }

@@ -12,7 +12,7 @@ import { ESCOLAS } from '../mock.escolas';
 export class EscolasComponent implements OnInit{
 
   escola: any;
-  ESCOLA = ESCOLAS;
+  escolas = ESCOLAS;
   selectedEscola?: ESCOLA; 
 
   constructor(){ }

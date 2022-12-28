@@ -22,9 +22,9 @@ export class EscolasComponent implements OnInit{
   onselect(escola: ESCOLA): void {};
 
   adicionaEscola(): void{
-                                                                                                                                                                        
+                            
     console.log(this.escola)
-    
+    this.escolas.push({id:1, name: this.escola})
   }
 
   estouPegando(): void{

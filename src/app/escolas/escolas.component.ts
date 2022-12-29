@@ -14,6 +14,7 @@ export class EscolasComponent implements OnInit{
   escola: any;
   escolas = ESCOLAS;
   selectedescola?: ESCOLA; 
+  
 
   constructor(){ }
 
@@ -48,7 +49,8 @@ export class EscolasComponent implements OnInit{
   }
 
   editar(escola:ESCOLA): void{
-    console.log(this.escola)
 
+    escola.editar = !escola.editar
+    console.log(escola)
   }
 }

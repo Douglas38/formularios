@@ -21,7 +21,6 @@ export class EscolasComponent implements OnInit{
     
   onselect(escola: ESCOLA): void {
 
-    console.log()
   };
 
   adicionaEscola(): void{
@@ -48,7 +47,8 @@ export class EscolasComponent implements OnInit{
 
   }
 
-  editar(): void{
+  editar(escola:ESCOLA): void{
+    console.log(this.escola)
 
   }
 }

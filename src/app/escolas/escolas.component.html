@@ -8,17 +8,14 @@
       <button type="button" (click)="onselect(escola)">
        <span class="name">{{escola.name}}</span></button>
       <button type="button" class="delete" (click)="deletar(escola)">x</button>
-      <button type="button" class="editar" (click)="editar()">editar</button>
+      <button type="button" class="editar" (click)="editar(escola)">editar</button>
       
     </li>
 </ul>
 
 <div *ngIf="selectedescola">
 <h2>{{selectedescola.name | uppercase}} detalhes</h2>
-<div><span>id: </span> {{selectedescola.id}} 
-    <button type="button">id</button>
 
-</div>
     
 </div>
 

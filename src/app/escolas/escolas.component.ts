@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Escola } from '../models/escola';
 import { ESCOLAS } from '../mock.escolas';
+import { Aluno } from '../models/aluno';
 
 
 @Component({
@@ -13,14 +14,16 @@ export class EscolasComponent implements OnInit{
   escola: any;
   escolas = ESCOLAS;
   selectedescola?: Escola; 
-  
+  alunos:Aluno[] = [];
+  alunosEdit:boolean = false;
 
   constructor(){ }
 
   ngOnInit(): void {}
     
-  onselect(escola: Escola): void {
-
+  selecionaEscola(escola: Escola): void {
+    console.log(escola)
+    this.alunosEdit = !this.alunosEdit;
   };
 
   adicionaEscola(): void{
@@ -51,5 +54,13 @@ export class EscolasComponent implements OnInit{
 
     escola.editar = !escola.editar
     console.log(escola)
+  }
+
+  adicionaAluno(){
+
+  }
+
+  selecionaAluno(aluno:Aluno){
+    console.log('seleciona')
   }
 }

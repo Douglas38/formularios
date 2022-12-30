@@ -5,7 +5,7 @@
 
 <ul>
     <li *ngFor="let escola of escolas">
-      <button type="button" (click)="onselect(escola)">
+      <button type="button" (click)="selecionaEscola(escola)">
       <span class="name">{{escola.name}}</span></button>
       <input  [(ngModel)]="escola.name" *ngIf="escola.editar"/>
       <button type="button" class="delete" (click)="deletar(escola)">x</button>
@@ -27,9 +27,30 @@
   <button type="button"  class="add-button"  (click)="adicionaEscola()">adiconar escola
 
   </button>
+  
+  
 
-  <button type="button" class="add-button" (click)="estouPegando()"> estou pegando</button>
+</div>
+
+<div *ngIf="alunosEdit">
   
-  
+  <h2>controle de alunos</h2>
+
+  <ul>
+    <li *ngFor="let aluno of alunos">
+    <button type="button" (click)="selecionaAluno(aluno)">
+    <span class="name">{{aluno.name}}</span></button>
+    <input  [(ngModel)]="aluno.name" *ngIf="aluno.editar"/>
+    <button type="button" class="delete" (click)="deletar(aluno)">x</button>
+    <button type="button" class="editar" (click)="editar(aluno)">editar</button>
+  </li>
+  </ul>
+
+
+  <div>
+    <label for="nova-escola">Alunos:</label>
+    <input id="nova-escola"  [(ngModel)]="alunos" placeholder="name"/>
+    <button type="button"  class="add-button"  (click)="adicionaAluno()">adiconar escola </button>
+  </div>
 
 </div>

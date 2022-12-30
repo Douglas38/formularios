@@ -1,6 +1,6 @@
-import { ESCOLA } from "./escola";
+import { Escola } from "./models/escola";
 
-export const ESCOLAS: ESCOLA[] =[
+export const ESCOLAS: Escola[] =[
 
 {id:1, name: 'barão'},
 {id: 2, name: 'dirceu'},

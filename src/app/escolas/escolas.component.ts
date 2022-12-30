@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ESCOLA } from '../escola';
+import { Escola } from '../models/escola';
 import { ESCOLAS } from '../mock.escolas';
 
 
@@ -13,14 +12,14 @@ export class EscolasComponent implements OnInit{
 
   escola: any;
   escolas = ESCOLAS;
-  selectedescola?: ESCOLA; 
+  selectedescola?: Escola; 
   
 
   constructor(){ }
 
   ngOnInit(): void {}
     
-  onselect(escola: ESCOLA): void {
+  onselect(escola: Escola): void {
 
   };
 
@@ -37,7 +36,7 @@ export class EscolasComponent implements OnInit{
 
   }
 
-  deletar(escola:ESCOLA): void{
+  deletar(escola:Escola): void{
     
     const index = this.escolas.indexOf(escola);
     this.escolas.splice(index, 1)
@@ -48,7 +47,7 @@ export class EscolasComponent implements OnInit{
 
   }
 
-  editar(escola:ESCOLA): void{
+  editar(escola:Escola): void{
 
     escola.editar = !escola.editar
     console.log(escola)

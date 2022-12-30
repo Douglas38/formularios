@@ -1,35 +1,54 @@
 
+<div *ngIf="!Alunosclass">
+
+   <h2><b>Escolas</b></h2>
+
+  <ul>
+      <li *ngFor="let escola of escolas">
+        <button type="button" (click)="onselect(escola)">
+        <span class="name">{{escola.name}}</span></button>
+        <input  [(ngModel)]="escola.name" *ngIf="escola.editar"/>
+        <button type="button" class="delete" (click)="deletar(escola)">x</button>
+        <button type="button" class="editar" (click)="editar(escola)">editar</button>
+  </li>
+  </ul>
 
 
-<h2>controle de EScolas</h2>
+  <div>
+    <label for="nova-escola">nome da Escola:</label>
 
-<ul>
-    <li *ngFor="let escola of escolas">
-      <button type="button" (click)="onselect(escola)">
-      <span class="name">{{escola.name}}</span></button>
-      <input  [(ngModel)]="escola.name" *ngIf="escola.editar"/>
-      <button type="button" class="delete" (click)="deletar(escola)">x</button>
-      <button type="button" class="editar" (click)="editar(escola)">editar</button>
-</li>
-</ul>
+    <input id="nova-escola"  [(ngModel)]="escolaName" placeholder="name:"/>
 
-<div *ngIf="selectedescola">
-<h2>{{selectedescola.name | uppercase}} detalhes</h2>
+    <button type="button"  class="add-button"  (click)="adicionaEscola()">adicionar escola
 
-    
+    </button>
+      
+  </div>
 </div>
+<div *ngIf="Alunosclass">
 
-<div>
-  <label for="nova-escola">nome da Escola:</label>
+    <h2>Controle de Alunos</h2>
 
-  <input id="nova-escola"  [(ngModel)]="escola" placeholder="name"/>
+  <ul>
+      <li *ngFor="let aluno of alunos">
+        <button type="button" (click)="onselect(aluno)">
+        <span class="name">{{aluno.name}}</span></button>
+        <input  [(ngModel)]="aluno.name" *ngIf="aluno.editar"/>
+        <button type="button" class="delete" (click)="deletarAluno(aluno)">x</button>
+        <button type="button" class="editar" (click)="editarAluno(aluno)">editar</button>
+  </li>
+  </ul>
 
-  <button type="button"  class="add-button"  (click)="adicionaEscola()">adiconar escola
 
-  </button>
+  <div>
+    <label for="novo-aluno">nome do aluno:</label>
 
-  <button type="button" class="add-button" (click)="estouPegando()"> estou pegando</button>
-  
-  
+    <input id="novo-aluno"  [(ngModel)]="aluno" placeholder="name"/>
 
+    <button type="button"  class="add-button"  (click)="adicionarAluno()">Adicionar Aluno
+
+    </button>  
+
+  </div>
+  <button (click)="voltar()">back</button>
 </div>

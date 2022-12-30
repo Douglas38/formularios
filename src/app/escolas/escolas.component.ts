@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ESCOLA } from '../escola';
-import { ESCOLAS } from '../mock.escolas';
+import { Aluno } from '../modelos/aluno';
+import { ESCOLA } from '../modelos/escola';
+import { ESCOLAS } from '../modelos/mock.escolas';
 
 
 @Component({
@@ -10,10 +11,14 @@ import { ESCOLAS } from '../mock.escolas';
   styleUrls: ['./escolas.component.css']
 })
 export class EscolasComponent implements OnInit{
-
+  escolaName: string = '';
   escola: any;
   escolas = ESCOLAS;
-  selectedescola?: ESCOLA; 
+
+  alunos:any;
+  aluno:any;
+  Alunosclass: boolean = false;
+   
   
 
   constructor(){ }
@@ -21,6 +26,11 @@ export class EscolasComponent implements OnInit{
   ngOnInit(): void {}
     
   onselect(escola: ESCOLA): void {
+
+    this.alunos = escola.Alunos;
+
+    this.Alunosclass = !this.Alunosclass
+    console.log(escola)
 
   };
 
@@ -52,5 +62,25 @@ export class EscolasComponent implements OnInit{
 
     escola.editar = !escola.editar
     console.log(escola)
+  }
+
+  adicionarAluno(): void{
+    this.alunos.push({id:this.escolas.length + 1, name: this.aluno})
+  }
+
+  editarAluno(aluno:Aluno):void{
+    aluno.editar = !aluno.editar
+    console.log(aluno)
+  }
+
+  deletarAluno(aluno:Aluno):void{
+
+    const index = this.alunos.indexOf(aluno);
+    this.alunos.splice(index, 1)
+
+  }
+
+  voltar(): void{
+    this.Alunosclass = !this.Alunosclass
   }
 }

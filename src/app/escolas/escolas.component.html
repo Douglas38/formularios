@@ -38,18 +38,18 @@
 
   <ul>
     <li *ngFor="let aluno of alunos">
-    <button type="button" (click)="selecionaAluno(aluno)">
+    <button type="button">
     <span class="name">{{aluno.name}}</span></button>
     <input  [(ngModel)]="aluno.name" *ngIf="aluno.editar"/>
-    <button type="button" class="delete" (click)="deletar(aluno)">x</button>
-    <button type="button" class="editar" (click)="editar(aluno)">editar</button>
+    <button type="button" class="delete" (click)="deletarAluno(aluno)">x</button>
+    <button type="button" class="editar" (click)="editarAluno(aluno)">editar</button>
   </li>
   </ul>
 
 
   <div>
     <label for="nova-escola">Alunos:</label>
-    <input id="nova-escola"  [(ngModel)]="alunos" placeholder="name"/>
+    <input id="nova-escola"  [(ngModel)]="alunoName" placeholder="name"/>
     <button type="button"  class="add-button"  (click)="adicionaAluno()">adiconar escola </button>
   </div>
 

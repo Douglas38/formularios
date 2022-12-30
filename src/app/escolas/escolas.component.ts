@@ -14,7 +14,9 @@ export class EscolasComponent implements OnInit{
   escola: any;
   escolas = ESCOLAS;
   selectedescola?: Escola; 
-  alunos:Aluno[] = [];
+
+  alunoName:any;
+  alunos:any;
   alunosEdit:boolean = false;
 
   constructor(){ }
@@ -22,32 +24,23 @@ export class EscolasComponent implements OnInit{
   ngOnInit(): void {}
     
   selecionaEscola(escola: Escola): void {
-    console.log(escola)
+    this.alunos = escola.alunos;
     this.alunosEdit = !this.alunosEdit;
   };
 
   adicionaEscola(): void{
-                            
-    console.log(this.escola)
+                          
     this.escolas.push({id:this.escolas.length + 1, name: this.escola})
-    console.log(this.escolas.length)
+
   }
 
   estouPegando(): void{
-
     console.log('acho que eu entendi')
-
   }
 
   deletar(escola:Escola): void{
-    
     const index = this.escolas.indexOf(escola);
     this.escolas.splice(index, 1)
-    
-    console.log(index)
-    console.log('oi')
-    
-
   }
 
   editar(escola:Escola): void{
@@ -57,10 +50,19 @@ export class EscolasComponent implements OnInit{
   }
 
   adicionaAluno(){
-
+    this.alunos.push({id:this.escolas.length + 1, name: this.alunoName})
   }
 
   selecionaAluno(aluno:Aluno){
     console.log('seleciona')
+  }
+
+  deletarAluno(aluno:Aluno): void{
+    const index = this.alunos.indexOf(aluno);
+    this.alunos.splice(index, 1)
+  }
+
+  editarAluno(aluno:Aluno): void{
+    aluno.editar = !aluno.editar
   }
 }

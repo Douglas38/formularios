@@ -1,7 +1,7 @@
 
 
 <div *ngIf="!alunosEdit">
-  <h2>controle de EScolas</h2>
+  <h2>Escolas</h2>
 
   <ul>
       <li *ngFor="let escola of escolas">
@@ -13,30 +13,19 @@
   </li>
   </ul>
 
-  <div *ngIf="selectedescola">
-  <h2>{{selectedescola.name | uppercase}} detalhes</h2>
-
-      
-  </div>
+ 
 
   <div>
-    <label for="nova-escola">nome da Escola:</label>
-
-    <input id="nova-escola"  [(ngModel)]="escola" placeholder="name"/>
-
-    <button type="button"  class="add-button"  (click)="adicionaEscola()">adiconar escola
-
-    </button>
-    
-    
-
+    <label for="nova-escola">Nome da Escola:</label>
+    <input id="nova-escola"  [(ngModel)]="escolaName" placeholder="name"/>
+    <button type="button"  class="add-button"  (click)="adicionaEscola()">Adicionar Escola</button>
   </div>
 
 </div>
 
 <div *ngIf="alunosEdit">
   
-  <h2>controle de alunos</h2>
+  <h2>Controle de Alunos</h2>
 
   <ul>
     <li *ngFor="let aluno of alunos">
@@ -44,7 +33,7 @@
     <span class="name">{{aluno.name}}</span></button>
     <input  [(ngModel)]="aluno.name" *ngIf="aluno.editar"/>
     <button type="button" class="delete" (click)="deletarAluno(aluno)">x</button>
-    <button type="button" class="editar" (click)="editarAluno(aluno)">editar</button>
+    <button type="button" class="editar" (click)="editarAluno(aluno)">Editar</button>
   </li>
   </ul>
 
@@ -52,7 +41,7 @@
   <div>
     <label for="nova-escola">Alunos:</label>
     <input id="nova-escola"  [(ngModel)]="alunoName" placeholder="name"/>
-    <button type="button"  class="add-button"  (click)="adicionaAluno()">adiconar escola </button>
+    <button type="button"  class="add-button"  (click)="adicionaAluno()">Adicionar Aluno </button>
   </div>
 
   <button type="button" class="delete" (click)="voltar()">Voltar</button>

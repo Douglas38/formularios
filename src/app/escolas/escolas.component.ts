@@ -11,11 +11,10 @@ import { Aluno } from '../models/aluno';
 })
 export class EscolasComponent implements OnInit{
 
-  escola: any;
+  escolaName:string = '';
   escolas = ESCOLAS;
-  selectedescola?: Escola; 
 
-  alunoName:any;
+  alunoName:string = '';
   alunos:any;
   alunosEdit:boolean = false;
 
@@ -30,7 +29,7 @@ export class EscolasComponent implements OnInit{
 
   adicionaEscola(): void{
                           
-    this.escolas.push({id:this.escolas.length + 1, name: this.escola})
+    this.escolas.push({id:this.escolas.length + 1, name: this.escolaName})
 
   }
 

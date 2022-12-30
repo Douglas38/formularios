@@ -65,4 +65,8 @@ export class EscolasComponent implements OnInit{
   editarAluno(aluno:Aluno): void{
     aluno.editar = !aluno.editar
   }
+
+  voltar(){
+    this.alunosEdit = !this.alunosEdit;
+  }
 }

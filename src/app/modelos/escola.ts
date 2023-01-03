@@ -1,4 +1,6 @@
-import { Aluno } from "./aluno";
+
+
+import { Turma } from "./turma";
 
 export interface ESCOLA
 {
@@ -6,6 +8,7 @@ export interface ESCOLA
   id: number;
   name: string;
   editar?: boolean;
-  Alunos?:Aluno[];
+  Turmas?:Turma[];
+  
 
 }

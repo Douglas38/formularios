@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Aluno } from '../modelos/aluno';
+import { Turma } from '../modelos/turma';
 import { ESCOLA } from '../modelos/escola';
 import { ESCOLAS } from '../modelos/mock.escolas';
+import { Aluno } from '../modelos/aluno';
 
 
 @Component({
@@ -15,9 +16,14 @@ export class EscolasComponent implements OnInit{
   escola: any;
   escolas = ESCOLAS;
 
-  alunos:any;
-  aluno:any;
+  Turmas:any;
+  Turma:any;
+  Turmasclass: boolean = false;
+
+  Alunos:any;
+  Aluno: any;
   Alunosclass: boolean = false;
+
    
   
 
@@ -27,9 +33,12 @@ export class EscolasComponent implements OnInit{
     
   onselect(escola: ESCOLA): void {
 
-    this.alunos = escola.Alunos;
+    this.Turmas = escola.Turmas;
+    this.Turmasclass = !this.Turmasclass
 
-    this.Alunosclass = !this.Alunosclass
+    
+
+
     console.log(escola)
 
   };
@@ -64,23 +73,53 @@ export class EscolasComponent implements OnInit{
     console.log(escola)
   }
 
-  adicionarAluno(): void{
-    this.alunos.push({id:this.escolas.length + 1, name: this.aluno})
+  onselected(turma:Turma): void{
+     
+    this.Alunos = turma.Alunos
+    this.Alunosclass = !this.Alunosclass
+
+    console.log(this.Aluno)
+    
   }
 
-  editarAluno(aluno:Aluno):void{
-    aluno.editar = !aluno.editar
-    console.log(aluno)
+  adicionarTurma(): void{
+    this.Turmas.push({id:this.escolas.length + 1, name: this.Turma})
   }
 
-  deletarAluno(aluno:Aluno):void{
+  editarTurma(Turma:Turma):void{
+    Turma.editar = !Turma.editar
+    console.log(Turma)
+  }
 
-    const index = this.alunos.indexOf(aluno);
-    this.alunos.splice(index, 1)
+  deletarTurma(Turma:Turma):void{
+
+    const index = this.Turmas.indexOf(Turma);
+    this.Turmas.splice(index, 1)
 
   }
+
+  adicionarAluno():void{
+   this.Alunos.push({id:this.Turmas.length + 1, name: this.Aluno})
+
+  }
+
+deletarAluno(aluno:Aluno): void { 
+
+  const index = this.Alunos.indexOf(aluno);
+  this.Alunos.splice(index, 1)
+
+ }
+
+ editarAluno(aluno:Aluno):void{
+  
+  this.Aluno.editar = !this.Aluno.editar
+  
+ }
+
+
 
   voltar(): void{
+    this.Turmasclass = !this.Turmasclass
     this.Alunosclass = !this.Alunosclass
   }
 }

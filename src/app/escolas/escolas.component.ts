@@ -46,15 +46,10 @@ export class EscolasComponent implements OnInit{
   adicionaEscola(): void{
                             
     console.log(this.escola)
-    this.escolas.push({id:this.escolas.length + 1, name: this.escola})
+    this.escolas.push({id:this.escolas.length + 1, name:this.escolaName})
     console.log(this.escolas.length)
   }
 
-  estouPegando(): void{
-
-    console.log('acho que eu entendi')
-
-  }
 
   deletar(escola:ESCOLA): void{
     
@@ -83,7 +78,7 @@ export class EscolasComponent implements OnInit{
   }
 
   adicionarTurma(): void{
-    this.Turmas.push({id:this.escolas.length + 1, name: this.Turma})
+    this.Turmas.push({id:this.escolas.length + 1, name:this.Turma})
   }
 
   editarTurma(Turma:Turma):void{
@@ -99,7 +94,7 @@ export class EscolasComponent implements OnInit{
   }
 
   adicionarAluno():void{
-   this.Alunos.push({id:this.Turmas.length + 1, name: this.Aluno})
+   this.Alunos.push({id:this.escolas.length + 1, name: this.Aluno})
 
   }
 

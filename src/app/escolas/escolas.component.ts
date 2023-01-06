@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Turma } from '../modelos/turma';
 import { ESCOLA } from '../modelos/escola';
 import { ESCOLAS } from '../modelos/mock.escolas';
 import { Aluno } from '../modelos/aluno';
+import { OutletContext } from '@angular/router';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { Aluno } from '../modelos/aluno';
   styleUrls: ['./escolas.component.css']
 })
 export class EscolasComponent implements OnInit{
+
+  
   escolaName: string = '';
   escola: any;
   escolas = ESCOLAS;
@@ -23,10 +26,12 @@ export class EscolasComponent implements OnInit{
   Alunos:any;
   Aluno: any;
   Alunosclass: boolean = false;
+  exibeTurma:boolean = false;
+  exibeEscola:boolean = true;
 
    
   
-
+ @Output() text: string = '';
   constructor(){ }
 
   ngOnInit(): void {}
@@ -34,12 +39,8 @@ export class EscolasComponent implements OnInit{
   onselect(escola: ESCOLA): void {
 
     this.Turmas = escola.Turmas;
-    this.Turmasclass = !this.Turmasclass
-
-    
-
-
-    console.log(escola)
+    this.exibeEscola = false;
+    this.exibeTurma = true;
 
   };
 
@@ -56,10 +57,6 @@ export class EscolasComponent implements OnInit{
     const index = this.escolas.indexOf(escola);
     this.escolas.splice(index, 1)
     
-    console.log(index)
-    console.log('oi')
-    
-
   }
 
   editar(escola:ESCOLA): void{
@@ -72,6 +69,7 @@ export class EscolasComponent implements OnInit{
      
     this.Alunos = turma.Alunos
     this.Alunosclass = !this.Alunosclass
+   
 
     console.log(this.Aluno)
     
@@ -93,7 +91,7 @@ export class EscolasComponent implements OnInit{
 
   }
 
-  adicionarAluno():void{
+adicionarAluno():void{
    this.Alunos.push({id:this.escolas.length + 1, name: this.Aluno})
 
   }
@@ -111,10 +109,14 @@ deletarAluno(aluno:Aluno): void {
   
  }
 
-
-
   voltar(): void{
     this.Turmasclass = !this.Turmasclass
     this.Alunosclass = !this.Alunosclass
+  }
+
+  exibirEscola(e:any){
+    console.log('funcionou o output, estou recebendo um evento no componente escolas, disparado pelo componente turma')
+    console.log(e)
+    this.exibeEscola = !this.exibeEscola
   }
 }

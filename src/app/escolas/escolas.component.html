@@ -58,4 +58,4 @@
     <button (click)="voltar()">back</button>
 </div>
 
-<app-turmas [text]="text"  *ngIf="exibeTurma" (closeTurma)="exibirEscola($event)"></app-turmas>
+<app-turmas *ngIf="exibeTurma" [Turmas]="this.Turmas" (closeTurma)="exibirEscola($event)"></app-turmas>

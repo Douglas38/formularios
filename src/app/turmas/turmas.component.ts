@@ -10,15 +10,17 @@ export class TurmasComponent implements OnInit {
   
   escolas:any;
   Alunosclass: boolean = false;
-  Turmas:any;
+ 
   Turma:any;
   Turmasclass: boolean = false;
 
-  @Input() text: string = '';
+  @Input() Turmas?:any;
   @Output() closeTurma = new EventEmitter();
   
   constructor(){}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 
   onselected(turma:Turma): void{
     this.Alunosclass = !this.Alunosclass;

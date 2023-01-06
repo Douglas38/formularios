@@ -4,13 +4,13 @@
       <h2>Controle de Turmas</h2>
 
     <ul>
-        <li *ngFor="let Turma of Turmas">
-          <button type="button" (click)="onselected(Turma)">
-          <span class="name">{{Turma.name}}</span></button>
-          <input  [(ngModel)]="Turma.name" *ngIf="Turma.editar"/>
-          <button type="button" class="delete" (click)="deletarTurma(Turma)">x</button>
-          <button type="button" class="editar" (click)="editarTurma(Turma)"> editar </button>
-    </li>
+        <li  *ngFor="let Turma of Turmas">
+            <button type="button" (click)="onselected(Turma)">
+            <span class="name">{{Turma.name}}</span></button>
+            <input  [(ngModel)]="Turma.name" *ngIf="Turma.editar"/>
+            <button type="button" class="delete" (click)="deletarTurma(Turma)">x</button>
+            <button type="button" class="editar" (click)="editarTurma(Turma)"> editar </button>
+        </li>
     </ul>
 
 

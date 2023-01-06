@@ -39,6 +39,7 @@ export class EscolasComponent implements OnInit{
   onselect(escola: ESCOLA): void {
 
     this.Turmas = escola.Turmas;
+    console.log(escola.Turmas)
     this.exibeEscola = false;
     this.exibeTurma = true;
 

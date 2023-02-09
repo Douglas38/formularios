@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Turma } from '../modelos/turma';
-import { ESCOLA } from '../modelos/escola';
-import { ESCOLAS } from '../modelos/mock.escolas';
-import { Aluno } from '../modelos/aluno';
+import { Turma } from '../../modelos/turma';
+import { ESCOLA } from '../../modelos/escola';
+import { ESCOLAS } from '../../modelos/mock.escolas';
+import { Aluno } from '../../modelos/aluno';
 
 
 @Component({

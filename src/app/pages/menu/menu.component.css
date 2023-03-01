@@ -1,0 +1,43 @@
+h1{
+   text-align: center;
+   color: rgb(247, 222, 159);
+
+}
+.container {
+   min-height:  80vh;
+   margin-top: 5em;
+   margin-block-end: 20rem; 
+
+}
+ a {
+     color: black;
+
+
+ }
+  
+ .menu-container {
+
+   width: 200px;
+   background: #ef6464;
+   font-size: 20px;
+ }
+
+ .menu-toggler {
+   padding: 10px;
+   color: #eee8e8;
+ }
+
+ .menu {
+    background: #eee8e8;
+    color: #7492f5;
+    padding: 10px;
+ }
+
+ .menu-item{
+    cursor: pointer;
+    padding: 5px 0;
+ }
+.menu-item:hover{
+
+   text-decoration: underline;
+}

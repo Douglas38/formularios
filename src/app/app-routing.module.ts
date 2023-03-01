@@ -8,9 +8,13 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 
 const routes: Routes = [
-{path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
+{path: 'login', component: LoginComponent },
 { path: 'sobre', component: SobreComponent,  canActivate: [AuthGuard] },
-{path: 'login', component: LoginComponent}
+{path: 'menu', component: MenuComponent,  canActivate: [AuthGuard]},
+{path: 'escola', component: EscolasComponent,  canActivate: [AuthGuard]}
+
+
+
 
 ];
 

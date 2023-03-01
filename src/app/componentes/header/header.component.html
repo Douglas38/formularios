@@ -1,14 +1,21 @@
-<nav *ngIf="mostrarMenu">
+
+   <nav *ngIf="mostrarMenu" class="cor">
+      <a class="brand">
+         <img src="/assets/abc.png" alt="ABC">
+      <h2>ABC control</h2>
+      </a>
    
-    <a class="brand">
-        <img src="/assets/abc.png" alt="ABC">
-     <h2>ABC control</h2>
-    </a>
-     <ul class="links">
-      <li> <a routerLink="menu"> menu </a></li>
-        <li><a  routerLink="sobre">sobre</a></li>
-       
-     </ul>
-  </nav>
-  <label>&#9776;</label>
-  
+      <ul class="links">
+            <div class="menu-container">
+               <div class="menu-toggler" (click)="togglermenu()"><label>&#9776;</label> </div>
+               <div class="menu" *ngIf="isMenuOpened">
+                     <div class="menu-item"> <li> <a routerLink="menu"> menu </a> </li></div>
+                     <div class="menu-item"><li> <a  routerLink="sobre">sobre </a> </li></div>
+                     <div class="menu-item"><li><a  routerLink="escola">escola</a> </li></div>
+               </div>
+            </div>
+         </ul>   
+   </nav>
+
+   
+   

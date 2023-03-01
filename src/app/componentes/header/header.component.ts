@@ -7,6 +7,8 @@ import { AuthService } from 'src/app/pages/login/login/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
+
+  isMenuOpened: boolean = false
  
   mostrarMenu: boolean = false
  
@@ -18,7 +20,13 @@ export class HeaderComponent implements OnInit{
 
       mostar => this.mostrarMenu = mostar
     );
+    
   }
 
+  togglermenu(): void{
 
+    this.isMenuOpened = !this.isMenuOpened
+
+
+}
 }

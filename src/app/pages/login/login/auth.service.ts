@@ -22,7 +22,7 @@ mostarMenuemitter = new EventEmitter <boolean>();
 
       this.mostarMenuemitter.emit(true)
 
-      this.router.navigate(['/']);
+      this.router.navigate(['/sobre']);
     }
 
     else { this.usuarioAutenticado = false 

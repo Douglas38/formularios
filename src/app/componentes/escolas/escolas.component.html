@@ -11,7 +11,9 @@
               <button type="button" (click)="onselect(escola)">
               <span class="name">{{escola.name}}</span></button>
               <input  [(ngModel)]="escola.name" *ngIf="escola.editar"/>
-              <button type="button" class="delete" (click)="deletar(escola)">x</button>
+              <button type="button"  class="close" aria-label="Close" (click)="deletar(escola)">
+                 <span aria-hidden="true">&times;</span>
+              </button>
               <button type="button" class="editar" (click)="editar(escola)">editar</button>
         </li>
         </ul>
@@ -91,3 +93,4 @@
     </div>
     <button (click)="voltar()">back</button>
 </div>
+

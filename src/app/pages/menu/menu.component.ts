@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+  isMenuOpened: boolean = false
+
+  togglermenu(): void{
+
+    this.isMenuOpened = !this.isMenuOpened
+
+    console.log("teste")
+
+
+  }
+
+  abrir(): void{
+    
+    console.log("abrir")
+
+
+  }
 
 }

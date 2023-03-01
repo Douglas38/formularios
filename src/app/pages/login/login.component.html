@@ -1,17 +1,29 @@
-<h5>Login</h5>
-<div class="row">
-    <div class="input-field col s6">
-      <input [(ngModel)]="usuario.name" id="usuario" type="text" class="validate">
-      <label class="active" for="usuario"> usuário</label>
-    </div>
 
-  <div class="row">
-    <div class="input-field col s12">
-      <input  [(ngModel)]="usuario.senha" id="senha" type="password" class="validate">
-      <label class="active" for="senha"> senha</label>
-    </div>
-  </div>
-  <button type="button" class="btn btn-outline-secondary"  (click)="fazerLogin()">login</button> 
+<div class="container" >  
+   <div class="row justify-content-center align-items-center vh-100">  
+     <div class="col-auto" >
+       <div class="border py-5 px-3 ">
+          <div class="row" >
+              <div class="col">
+                <label class="form-label" for="usuario"> Usuário</label>
+                <input [(ngModel)]="usuario.name" id="usuario" type="text" class="form-control">
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col">
+                <label class="form-label" for="senha"> Senha</label>
+                <input  [(ngModel)]="usuario.senha" id="senha" type="password" class="form-control">
+              </div>
+              <a routerLink="#">Esqueci minha senha</a>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="fazerLogin()">Entrar</button>
+          </div> 
+       </div>
+     </div>
+   </div>
+</div>
 
 
  

@@ -1,9 +1,22 @@
 /* HeroesComponent's private CSS styles   <label>&#9776;</label> */
+h2{
+
+  text-align: center;
+font-size: 40pt;
+background: #edf4cc;
+margin-bottom: 1em;
+
+
+
+}
+
 .escolas {
+
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
+  
 }
 
 input {
@@ -13,41 +26,39 @@ input {
   margin: 0rem 0;
   box-sizing: border-box;
 }
+ .button-delete{ 
+  border: none;
+  background: none;
+  padding: 0.1em 0.3em;
+  box-sizing: border-box;
 
-.escolas li {
-  position: relative;
-  cursor: pointer;
-}
+ }
 
 .escolas li:hover {
   left: .1em;
 }
 
 
-.escolas .badge {
-  display: inline-block;
-  font-size: small;
+
+
+
+button:hover {
+  background-color:rgb(6, 6, 241);
   color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
 }
+button:disabled {
+  background-color: #e90c0c;
+  color: #f60d0d;
+  cursor: auto;
+}
+.btn-link {
 
-.deletar {
-
-  color: red;
+  
+  color: rgb(225, 11, 11);
+ 
   
   
-
-
 }
 
 
+ 

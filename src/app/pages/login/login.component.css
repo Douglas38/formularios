@@ -1,6 +1,16 @@
 
+.container{
+  background-image: url( /assets/login.png.jpg );
+
+
+
+}
+
+
+
+
 h5{
-  color: brown;
+  color: rgb(39, 5, 5);
   text-align: center;
   font-size: 40pt;
   justify-content: center;
@@ -28,7 +38,7 @@ label{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.2rem;
-    color: rgb(45, 44, 46);
+    color: rgb(238, 160, 5);
 }
 
 button:hover{
@@ -39,4 +49,9 @@ button:hover{
 a {
 
     color: #380de6;
+}
+
+.border{
+
+  opacity: 100%;
 }
